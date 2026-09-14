@@ -8,20 +8,6 @@ function getRange(start, end, step = 1) {
     return arr;
 }
 
-function showRange() {
-    let start = Number(document.getElementById("start").value);
-    let end = Number(document.getElementById("end").value);
-    let step = Number(document.getElementById("step").value);
-
-    if (step == 0) {
-        step = 1;
-    }
-
-    let result = getRange(start, end, step);
-
-    document.getElementById("rangeResult").innerHTML = result;
-}
-
 
 function myReverse(str) {
     let result = "";
@@ -31,12 +17,6 @@ function myReverse(str) {
     }
 
     return result;
-}
-
-function showReverse() {
-    let text = document.getElementById("text").value;
-
-    document.getElementById("reverseResult").innerHTML = myReverse(text);
 }
 
 
@@ -54,13 +34,34 @@ function maskCard(card, symbol = "X") {
     return result;
 }
 
-function showCard() {
-    let card = document.getElementById("card").value;
-    let symbol = document.getElementById("symbol").value;
 
-    if (symbol == "") {
-        symbol = "X";
-    }
+let start = Number(prompt("Введите начало диапазона:"));
+let end = Number(prompt("Введите конец диапазона:"));
+let step = Number(prompt("Введите шаг:"));
 
-    document.getElementById("cardResult").innerHTML = maskCard(card, symbol);
+if (step == 0) {
+    step = 1;
 }
+
+let range = getRange(start, end, step);
+
+alert("Диапазон: " + range);
+
+
+let text = prompt("Введите строку для переворота:");
+
+let reverse = myReverse(text);
+
+alert("Перевернутая строка: " + reverse);
+
+
+let card = prompt("Введите номер банковской карты:");
+let symbol = prompt("Введите символ для маскировки:");
+
+if (symbol == "") {
+    symbol = "X";
+}
+
+let maskedCard = maskCard(card, symbol);
+
+alert("Замаскированная карта: " + maskedCard);
