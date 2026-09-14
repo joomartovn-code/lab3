@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Задание по JavaScript</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <h1>Задание по JavaScript</h1>
+
+    <div class="task">
+        <h2>1. Диапазон чисел</h2>
+
+        <input type="number" id="start" placeholder="Начало">
+        <input type="number" id="end" placeholder="Конец">
+        <input type="number" id="step" placeholder="Шаг">
+
+        <button onclick="showRange()">Получить диапазон</button>
+
+        <p id="rangeResult"></p>
+    </div>
+
+    <div class="task">
+        <h2>2. Переворот строки</h2>
+
+        <input type="text" id="text" placeholder="Введите строку">
+
+        <button onclick="showReverse()">Перевернуть</button>
+
+        <p id="reverseResult"></p>
+    </div>
+
+    <div class="task">
+        <h2>3. Маска банковской карты</h2>
+
+        <input type="text" id="card" placeholder="Номер карты">
+        <input type="text" id="symbol" placeholder="Символ" value="X">
+
+        <button onclick="showCard()">Замаскировать</button>
+
+        <p id="cardResult"></p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
